@@ -1,0 +1,65 @@
+/ { lcds {
+	lcd_st7789v3_spi_qvga: lcd77891@77891 {
+
+		panel-name = "lcd_st7789v3_spi_qvga";
+		if-type = <4>;
+		spi_bus_num = <1>;
+		spi_cs = <0>;
+		bpp = <16>;
+		fps = <33>;
+		spi_mode = <3>; /* SPI_CPHA 0x01 SPI_CPOL 0x02 */
+		spi_cd_gpio = <60>;
+		spi_te_gpio = <33>;
+		spi_pol_mode = <0>;
+		spi_endian = <0>;
+		spi_freq = <48000000>;
+		hactive = <240>;
+		vactive = <320>;
+
+		power-on-sequence = <
+					32  1  5
+					32  0  5
+					32  1  20
+					>;
+		power-off-sequence = <
+					32  0  20
+					>;
+
+		init-data = [
+			ff  78  00  01  11
+			ff  00  00  06  b2  0c  0c  00  33  33
+			ff  00  00  02  b7  35
+			ff  00  00  02  bb  2b
+			ff  00  00  02  c0  2c
+			ff  00  00  02  c2  01
+			ff  00  00  02  c3  17
+			ff  00  00  02  c4  20
+			ff  00  00  02  c6  0f
+			ff  00  00  02  ca  0f
+			ff  00  00  02  c8  08
+			ff  00  00  02  55  90
+			ff  00  00  03  d0  a4  a1
+			ff  00  00  0f  e0  f0  00  0a  10  12  1b  39  44  47  28  12  10  16  1b
+			ff  00  00  0f  e1  f0  00  0a  10  11  1a  3b  34  4e  3a  17  16  21  22
+			ff  00  00  02  36  00
+			ff  00  00  02  35  00
+			ff  00  00  02  3a  05
+			ff  78  00  01  29
+			];
+		sleep-in = [
+			ff 78 00 01 28
+			ff 78 00 01 10
+			];
+		sleep-out = [
+			ff 78 00 01 11
+			ff 64 00 01 29
+			];
+		enable-te = [
+			ff 00 00 02 35 00
+			];
+		disable-te = [
+			ff 00 00 01 34
+			];
+	};
+};};
+

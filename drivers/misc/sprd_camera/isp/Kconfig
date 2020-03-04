@@ -1,0 +1,15 @@
+
+config SPRD_CAMERA_ISP_R6P91
+    bool "Spreadtrum Camera ISP_R6P91"
+    depends on SPRD_CAMERA
+    help
+        This is ISP_R6P91 driver for Spreadtrum SOCs
+        and pike2, if you want to use this config,
+        please to read spec and driver code,
+        they can help you to use r6p91 driver
+
+config SPRD_CAMERA_ISP_R6P11
+    bool "Spreadtrum Camera ISP R6P11"
+    depends on SPRD_CAMERA
+    help
+        This is ISP R6P11 driver for Spreadtrum SOCs.

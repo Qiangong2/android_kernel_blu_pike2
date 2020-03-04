@@ -1,0 +1,15 @@
+
+config SPRD_CAMERA_CPP_LITE_R3P0
+	bool "Spreadtrum Camera CPP LITE R3P0 Driver"
+	depends on SPRD_CAMERA
+	help
+	    Support for CPP on Spreadtrum SOCs, it is used for image rotation
+	    and scaling when using camera.
+
+config SPRD_CAMERA_CPP_DCAM_R6P0
+        bool "Spreadtrum Camera pike2 CPP VERSION DCAM_R6P0"
+        depends on SPRD_CAMERA
+        help
+            Support for CPP on Spreadtrum SOCs, it is used for image rotation
+            and scaling when using camera.
+

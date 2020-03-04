@@ -1,0 +1,16 @@
+
+config SPRD_CAM_PW_DOMAIN_R4P0
+	bool "Spreadtrum Camera Power Domain R4P0 for Pike2"
+	depends on SPRD_CAMERA
+	help
+            This is a power domain driver for Spreadtrum SOCs
+            and pike2. This driver open and close some clocks for pike2 Cam Sys.
+            If you want to use this config,
+            please read spec and driver code, they can help you to use r4p0 driver
+
+config SPRD_CAM_PW_DOMAIN_R5P0
+	bool "Spreadtrum Camera Power Domain R5P0"
+	depends on SPRD_CAMERA
+	help
+	    This is a power domain driver for cam & dispc sys.
+

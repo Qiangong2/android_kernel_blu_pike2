@@ -1,0 +1,20 @@
+config WCN_BOOT
+	tristate "Core Support"
+	help
+	Choose Y here if you have this FM radio chip.
+
+	In order to control your radio card, you will need to use programs
+	that are compatible with the Video For Linux 2 API.  Information on
+	this API and pointers to "v4l2" programs may be found at
+	<file:Documentation/video4linux/API.html>.
+
+config WCN_PLATFORM
+	tristate "Platform Support"
+	depends on SC2342_INTEG
+	default y
+	help
+	Enable this module for Spreadtrum WCN integration
+	chip debug and manage function.
+
+	In order to control or debug your marlin chip, you will need to support
+	procfs command and memory dump,cp log and so on.

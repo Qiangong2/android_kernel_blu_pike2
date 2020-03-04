@@ -1,0 +1,39 @@
+/*
+ * Spreadtrum SP7731e board common DTS file
+ *
+ * Copyright (C) 2017, Spreadtrum Communications Inc.
+ *
+ * This file is licensed under a dual GPLv2 or X11 license.
+ */
+
+#include "../lcd_dummy_spi.dtsi"
+//////////////////////////////////////
+#include "lcd_gc9305_spi_qvga.dtsi"
+#include "lcd_gc9306_spi_qvga.dtsi"
+#include "lcd_st7789v2_spi_qvga.dtsi"
+#include "lcd_ili9340x_spi_qvga.dtsi"
+#include "lcd_gc9307_spi_qvga.dtsi"
+
+/ {
+
+		panel_if: sprd-panel-if {
+		compatible = "sprd-panel-if";
+		panel-drivers = <
+			&lcd_gc9305_spi_qvga
+			&lcd_gc9306_spi_qvga
+			&lcd_st7789v2_spi_qvga
+			&lcd_ili9340x_spi_qvga
+			&lcd_dummy_spi
+		>;
+		/* input port */
+		port@1 {
+			reg = <1>;
+			panel_in: endpoint@0 {
+				remote-endpoint = <&spi_intf_out>;
+			};
+		};
+	};
+
+};
+
+

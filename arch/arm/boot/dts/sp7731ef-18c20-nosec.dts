@@ -1,0 +1,10 @@
+
+#include "sp7731ef-18c20-native.dts"
+
+/ {
+	model = "Spreadtrum Pike2 SC7731ef-18c20-NOSEC Board";
+
+	reserved-memory {
+		/delete-node/ tos-mem@8e020000;
+	};
+};
